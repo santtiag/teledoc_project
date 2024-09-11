@@ -2,7 +2,7 @@ import sys
 import os
 
 # Añadir el directorio actual al path de Python
-INTERP = os.path.expanduser("/project/venv/bin/python")
+INTERP = os.path.expanduser("/home/teledoc1/web_teledoc/teledoc_project/venv/bin/python")
 if sys.executable != INTERP:
     os.execl(INTERP, INTERP, *sys.argv)
 
