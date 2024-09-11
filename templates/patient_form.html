@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Formulario Medico</title>
+        <link
+            href="{{ url_for('static', path='css/nav.css') }}"
+            rel="stylesheet"
+        />
+        <link
+            href="{{ url_for('static', path='css/index.css') }}"
+            rel="stylesheet"
+        />
+        <link
+            href="{{ url_for('static', path='css/form_physician.css') }}"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+    </head>
+
+    <body>
+        <!-- Navegation -->
+        <header id="content">
+            <nav class="navbar">
+                <div class="logo">Unname</div>
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                </ul>
+                <div class="social-links">
+                    <a
+                        target="_blank"
+                        class="fa"
+                        href="https://github.com/santtiag"
+                        >&#xf09b;</a
+                    >
+                </div>
+            </nav>
+        </header>
+        <div class="cuadro">
+            <div class="content">
+                <h1 style="text-align: center">Formulario Médico</h1>
+                <div class="container">
+                    <form id="patientForm">
+                        <input
+                            type="hidden"
+                            id="idPaciente"
+                            name="idPaciente"
+                            value="{{ id_paciente }}"
+                        />
+
+                        <div class="form-group">
+                            <label for="motivo">Motivo de la consulta:</label>
+                            <textarea
+                                id="motivo"
+                                name="motivo"
+                                rows="4"
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Es alérgico a:</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input
+                                        type="radio"
+                                        id="alergia_ninguna"
+                                        name="alergia"
+                                        value="ninguna"
+                                    />
+                                    <label for="alergia_ninguna"
+                                        >Ninguna Alergia</label
+                                    >
+                                </div>
+                                <div class="radio-option">
+                                    <input
+                                        type="radio"
+                                        id="alergia_medicamentos"
+                                        name="alergia"
+                                        value="medicamentos"
+                                    />
+                                    <label for="alergia_medicamentos"
+                                        >Medicamentos</label
+                                    >
+                                </div>
+                                <div class="radio-option">
+                                    <input
+                                        type="radio"
+                                        id="alergia_alimentos"
+                                        name="alergia"
+                                        value="alimentos"
+                                    />
+                                    <label for="alergia_alimentos"
+                                        >Alimentos</label
+                                    >
+                                </div>
+                                <div class="radio-option">
+                                    <input
+                                        type="radio"
+                                        id="alergia_insectos"
+                                        name="alergia"
+                                        value="insectos"
+                                    />
+                                    <label for="alergia_insectos"
+                                        >Insectos</label
+                                    >
+                                </div>
+                                <div class="radio-option">
+                                    <input
+                                        type="radio"
+                                        id="alergia_otros"
+                                        name="alergia"
+                                        value="otros"
+                                    />
+                                    <label for="alergia_otros">Otros</label>
+                                </div>
+                            </div>
+                            <textarea
+                                id="alergia_especificar"
+                                name="alergia_especificar"
+                                rows="2"
+                                class="hidden"
+                            ></textarea>
+                        </div>
+
+                        <!-- ... (el resto de los campos del formulario) ... -->
+
+                        <button type="submit">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="{{ url_for('static', path='js/patient_form.js') }}"></script>
+    </body>
+</html>
